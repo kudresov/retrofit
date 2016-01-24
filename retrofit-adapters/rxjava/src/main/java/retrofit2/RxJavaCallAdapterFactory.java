@@ -112,6 +112,7 @@ public final class RxJavaCallAdapterFactory implements CallAdapter.Factory {
         Exceptions.throwIfFatal(t);
         if (!subscriber.isUnsubscribed()) {
           subscriber.onError(t);
+          subscriber.onCompleted();
         }
         return;
       }
